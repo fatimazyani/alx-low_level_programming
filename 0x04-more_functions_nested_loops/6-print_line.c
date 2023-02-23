@@ -1,13 +1,24 @@
 #include "main.h"
-/**
- * print_numbers - a function that prints the numbers from à to 9
- * Return: 0-9 followed by newline
- */
-void print_numbers(void)
-{
-	int i;
 
-	for (i = 0, i <= 9; i++)
-		_putchar(i + '0');
-	_putchar('\n');
+/**
+ * print_line - a function that draws a straight line in the terminal
+ * @n: input number of times to print '_'
+ * Return: a straight line
+ */
+void print_line(int n)
+{
+	int co;
+
+	if (n <= 0)
+	{
+		_putchar('\n');
+	}
+	else
+	{
+		for (co = 1; co <= n; co++)
+		{
+			_putchar('_');
+		}
+		_putchar('\n');
+	}
 }
