@@ -1,18 +1,33 @@
-#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+
 /**
- * print_most_numbers - a function that prints the numbers from 0 to 9
- * Return: 0-9 followed by newline exluding 2 an 4
+ * main - prints the numbers from 1 to 100
+ * 3 multiples print Fizz instead of the number
+ * 5 multiples print Buzz instead of the number
+ * 3 & 5 multiples print FizzBuzz instead of the number
+ * Return: Always 0 (Success)
  */
-void print_most_numbers(void)
+int main(void)
 {
 	int i;
+	char f[] = "Fizz";
+	char b[] = "Buzz";
+	char fb[] = "FizzBuzz";
 
-	for (i = 0, i <= 9; i++)
+	for (i = 1; i <= 100; i++)
 	{
-		if ((i == 2) || (i == 4))
-			continue;
+		if (i == 100)
+			printf("%s", b);
+		else if ((i % 3 == 0) && (i % 5 == 0))
+			printf("%s ", fb);
+		else if (i % 3 == 0)
+			printf("%s ", f);
+		else if (i % 5 == 0)
+			printf("%s ", b);
 		else
-			_putchar(i + '0');
+			printf("%d ", i);
 	}
-	_putchar('\n');
+	printf("\n");
+	return (0);
 }
