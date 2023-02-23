@@ -1,18 +1,28 @@
 #include "main.h"
-/**
- * print_most_numbers - a function that prints the numbers from 0 to 9
- * Return: 0-9 followed by newline exluding 2 an 4
- */
-void print_most_numbers(void)
-{
-	int i;
 
-	for (i = 0, i <= 9; i++)
+/**
+ * print_square - a function that prints a square, followed by a new line
+ * @size: size of both width and length
+ * Return: a square made of '#'
+ */
+void print_square(int size)
+{
+	int co, ro;
+
+	if (size <= 0)
 	{
-		if ((i == 2) || (i == 4))
-			continue;
-		else
-			_putchar(i + '0');
+		_putchar('\n');
 	}
-	_putchar('\n');
+	else
+	{
+		for (co = 1; co <= size; co++)
+		{
+			_putchar('#');
+			for (ro = 2; ro <= size; ro++)
+			{
+				_putchar('#');
+			}
+			_putchar('\n');
+		}
+	}
 }
