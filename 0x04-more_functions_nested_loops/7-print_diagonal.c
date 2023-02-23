@@ -1,13 +1,28 @@
 #include "main.h"
-/**
- * print_numbers - a function that prints the numbers from à to 9
- * Return: 0-9 followed by newline
- */
-void print_numbers(void)
-{
-	int i;
 
-	for (i = 0, i <= 9; i++)
-		_putchar(i + '0');
-	_putchar('\n');
+/**
+ * print_diagonal -  a function that draws a diagonal line on the terminal
+ * @n: input number of times '\' should be printed
+ * Return: a diagonal
+ */
+void print_diagonal(int n)
+{
+	int co, sp;
+
+	if (n <= 0)
+	{
+		_putchar('\n');
+	}
+	else
+	{
+		for (co = 1; co <= n; co++)
+		{
+			for (sp = 1; sp < co; sp++)
+			{
+				_putchar(' ');
+			}
+			_putchar('\\');
+			_putchar('\n');
+		}
+	}
 }
