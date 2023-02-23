@@ -1,18 +1,36 @@
-#include "main.h"
-/**
- * print_most_numbers - a function that prints the numbers from 0 to 9
- * Return: 0-9 followed by newline exluding 2 an 4
+/*
+ * File: 100-prime_factor.c
+ * Auth: zyani
  */
-void print_most_numbers(void)
-{
-	int i;
 
-	for (i = 0, i <= 9; i++)
+#include <stdio.h>
+
+/**
+ * main - Finds and prints the largest prime
+ *        factor of the number 612852475143.
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+	long prime = 612852475143, div;
+
+	while (div < (prime / 2))
 	{
-		if ((i == 2) || (i == 4))
+		if ((prime % 2) == 0)
+		{
+			prime /= 2;
 			continue;
-		else
-			_putchar(i + '0');
+		}
+
+		for (div = 3; div < (prime / 2); div += 2)
+		{
+			if ((prime % div) == 0)
+				prime /= div;
+		}
 	}
-	_putchar('\n');
+
+	printf("%ld\n", prime);
+
+	return (0);
 }

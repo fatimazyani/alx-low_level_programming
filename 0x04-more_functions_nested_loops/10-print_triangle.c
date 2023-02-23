@@ -1,18 +1,31 @@
 #include "main.h"
-/**
- * print_most_numbers - a function that prints the numbers from 0 to 9
- * Return: 0-9 followed by newline exluding 2 an 4
- */
-void print_most_numbers(void)
-{
-	int i;
 
-	for (i = 0, i <= 9; i++)
+/**
+ * print_triangle - a function that prints a triangle
+ * @size: size of the triangle
+ * Return: triangle of '#'s
+ */
+void print_triangle(int size)
+{
+	int sp, ro, tr;
+
+	if (size <= 0)
 	{
-		if ((i == 2) || (i == 4))
-			continue;
-		else
-			_putchar(i + '0');
+		_putchar('\n');
 	}
-	_putchar('\n');
+	else
+	{
+		for (ro = 0; ro <= (size - 1); ro++)
+		{
+			for (sp = 0; sp < (size - 1) - ro; sp++)
+			{
+				_putchar(' ');
+			}
+			for (tr = 0; tr <= ro; tr++)
+			{
+				_putchar('#');
+			}
+			_putchar('\n');
+		}
+	}
 }
