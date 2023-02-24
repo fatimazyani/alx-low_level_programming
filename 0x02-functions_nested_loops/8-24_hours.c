@@ -23,7 +23,3 @@ void jack_bauer(void)
 		}
 	}
 }
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-
