@@ -1,28 +1,14 @@
 #include "main.h"
-
 /**
- * largest_number - returns the largest of 3 numbers
- * @a: first integer
- * @b: second integer
- * @c: third integer
- * Return: largest number
- */
+ * swap_int - swap variable values
+ * @a: pointer 1
+ * @b: pointer 2
+ * Return: void
+*/
 
-int largest_number(int a, int b, int c)
-{int largest;
-
-if (a > b && a > c)
+void swap_int(int *a, int *b)
 {
-largest = a;
-}
-else if (b > c)
-{
-largest = b;
-}
-else
-{
-largest = c;
-}
-
-return (largest);
+	*a += *b;
+	*b = *a - *b;
+	*a = *a - *b;
 }
