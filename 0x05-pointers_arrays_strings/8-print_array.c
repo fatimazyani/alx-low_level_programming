@@ -1,28 +1,28 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * largest_number - returns the largest of 3 numbers
- * @a: first integer
- * @b: second integer
- * @c: third integer
- * Return: largest number
+ * print_array - print `n` elements of an array of integers
+ * @a: int type array pointer
+ * @n: int type integer
+ * Description: Numbers must be separated by comma and space.
+ * Numbers should be displayed in the same order they are stored in array.
+ * You can only use _putchar to print.
  */
 
-int largest_number(int a, int b, int c)
-{int largest;
+void print_array(int *a, int n)
+{
+	int i;
 
-if (a > b && a > c)
-{
-largest = a;
-}
-else if (b > c)
-{
-largest = b;
-}
-else
-{
-largest = c;
-}
+	i = 0;
+	for (n--; n >= 0; n--, i++)
+	{
+		printf("%d", a[i]);
+		if (n > 0)
+		{
+			printf(", ");
+		}
+	}
+	printf("\n");
 
-return (largest);
 }
