@@ -1,28 +1,20 @@
 #include "main.h"
-
 /**
- * largest_number - returns the largest of 3 numbers
- * @a: first integer
- * @b: second integer
- * @c: third integer
- * Return: largest number
- */
+ * _puts - prints a string, followed by a new line,
+ * @str: pointer to the string to print
+ * Return: void
+*/
 
-int largest_number(int a, int b, int c)
-{int largest;
 
-if (a > b && a > c)
+void _puts(char *str)
 {
-largest = a;
-}
-else if (b > c)
-{
-largest = b;
-}
-else
-{
-largest = c;
-}
+	int i = 0;
 
-return (largest);
+	while (str[i])
+	{
+		_putchar(str[i]);
+		i++;
+	}
+
+	_putchar('\n');
 }
