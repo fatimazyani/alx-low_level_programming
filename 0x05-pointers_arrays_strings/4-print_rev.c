@@ -1,28 +1,22 @@
 #include "main.h"
-
 /**
- * largest_number - returns the largest of 3 numbers
- * @a: first integer
- * @b: second integer
- * @c: third integer
- * Return: largest number
- */
+ * print_rev - prints reversed string, followed by a new line
+ * @s: pointer to the string to print
+ * Return: void
+*/
 
-int largest_number(int a, int b, int c)
-{int largest;
+void print_rev(char *s)
+{
+	int i = 0;
 
-if (a > b && a > c)
-{
-largest = a;
-}
-else if (b > c)
-{
-largest = b;
-}
-else
-{
-largest = c;
-}
+	while (s[i])
+		i++;
 
-return (largest);
+	while (i--)
+	{
+		_putchar(s[i]);
+	}
+
+	_putchar('\n');
+
 }
