@@ -1,28 +1,13 @@
-#include "main.h"
+#include <unistd.h>
 
 /**
- * largest_number - returns the largest of 3 numbers
- * @a: first integer
- * @b: second integer
- * @c: third integer
- * Return: largest number
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
-
-int largest_number(int a, int b, int c)
-{int largest;
-
-if (a > b && a > c)
+int _putchar(char c)
 {
-largest = a;
-}
-else if (b > c)
-{
-largest = b;
-}
-else
-{
-largest = c;
-}
-
-return (largest);
+	return (write(1, &c, 1));
 }
