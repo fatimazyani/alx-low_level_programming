@@ -1,28 +1,22 @@
 #include "main.h"
 
 /**
- * largest_number - returns the largest of 3 numbers
- * @a: first integer
- * @b: second integer
- * @c: third integer
- * Return: largest number
+ * *_strcpy -  copies the string pointed to by src
+ * @dest: char type string
+ * @src: char type string
+ * Description: Copy the string pointed to by pointer `src` to
+ * the buffer pointed to by `dest`
+ * Return: Pointer to `dest`
  */
 
-int largest_number(int a, int b, int c)
-{int largest;
+char *_strcpy(char *dest, char *src)
+{
+	int i = -1;
 
-if (a > b && a > c)
-{
-largest = a;
-}
-else if (b > c)
-{
-largest = b;
-}
-else
-{
-largest = c;
-}
+	do {
+		i++;
+		dest[i] = src[i];
+	} while (src[i] != '\0');
 
-return (largest);
+	return (dest);
 }
