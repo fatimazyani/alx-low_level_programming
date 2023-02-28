@@ -1,28 +1,13 @@
 #include "main.h"
-
 /**
- * largest_number - returns the largest of 3 numbers
- * @a: first integer
- * @b: second integer
- * @c: third integer
- * Return: largest number
- */
+ * reset_to_98 - reset argument to 98
+ * @n: pointer
+ * Return: void
+*/
 
-int largest_number(int a, int b, int c)
-{int largest;
+void reset_to_98(int *n)
+{
 
-if (a > b && a > c)
-{
-largest = a;
-}
-else if (b > c)
-{
-largest = b;
-}
-else
-{
-largest = c;
-}
+	*n = 98;
 
-return (largest);
 }
