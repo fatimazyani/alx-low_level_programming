@@ -1,31 +1,18 @@
-#include "main.h"
+#ifndef FILE_MAIN
+#define FILE_MAIN
 
-/**
- * _atoi - convert a string to an integer.
- * @s: char type string
- * Return: integer converted
- */
+int _putchar(char c);
+char *_strcat(char *dest, char *src);
+char *_strncat(char *dest, char *src, int n);
+char *_strncpy(char *dest, char *src, int n);
+int _strcmp(char *s1, char *s2);
+void reverse_array(int *a, int n);
+char *string_toupper(char *);
+char *cap_string(char *);
+char *leet(char *);
+char *rot13(char *);
+void print_number(int n);
+char *infinite_add(char *n1, char *n2, char *r, int size_r);
+void print_buffer(char *b, int size);
 
-int _atoi(char *s)
-{
-	int i;
-	int res = 0;
-	int sig = -1;
-	int brk = 0;
-
-	for (i = 0; s[i] != '\0'; i++)
-	{
-		if (s[i] == '-')
-			sig = sig * -1;
-		if (s[i] >= '0' && s[i] <= '9')
-		{
-			res = res * 10;
-			res -= (s[i] - '0');
-			brk = 1;
-		}
-		else if (brk == 1)
-			break;
-	}
-	res = sig * res;
-	return (res);
-}
+#endif
