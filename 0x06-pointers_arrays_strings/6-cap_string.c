@@ -1,31 +1,43 @@
 #include "main.h"
 
 /**
- * _atoi - convert a string to an integer.
- * @s: char type string
- * Return: integer converted
- */
+ * *cap_string - capitalize words
+ * @str: pointer
+ * Return: capitalzied string
+*/
 
-int _atoi(char *s)
+char *cap_string(char *str)
 {
-	int i;
-	int res = 0;
-	int sig = -1;
-	int brk = 0;
+	char sep[] = ",\t;\n; .!?\"(){}";
+	int flag, i, ii;
 
-	for (i = 0; s[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (s[i] == '-')
-			sig = sig * -1;
-		if (s[i] >= '0' && s[i] <= '9')
+		flag = 0;
+
+		if (i == 0)
 		{
-			res = res * 10;
-			res -= (s[i] - '0');
-			brk = 1;
+			flag = 1;
 		}
-		else if (brk == 1)
-			break;
+		else
+		{
+			for (ii = 0; sep[ii] != '\0'; ii++)
+			{
+				if (str[i - 1] == sep[ii])
+				{
+					flag = 1;
+					break;
+				}
+			}
+		}
+
+		if (flag == 1)
+		{
+			if (str[i] <= 'z' && str[i] >= 'a')
+			{
+				str[i] -= ('a' - 'A');
+			}
+		}
 	}
-	res = sig * res;
-	return (res);
+	return (str);
 }
