@@ -1,31 +1,25 @@
 #include "main.h"
-
 /**
- * _atoi - convert a string to an integer.
- * @s: char type string
- * Return: integer converted
- */
+ * _strcmp - compares two strings
+ * @s1: string 1
+ * @s2: string 2
+ * Return: 0 if matching, and ns1 - ns2 if not matching
+*/
 
-int _atoi(char *s)
+int _strcmp(char *s1, char *s2)
 {
 	int i;
-	int res = 0;
-	int sig = -1;
-	int brk = 0;
 
-	for (i = 0; s[i] != '\0'; i++)
+	/**
+	 * We have reached the end of S1 OR we have reached the end of S2
+	*/
+
+	for (i = 0; s1[i] != '\0' || s2[i] != '\0'; i++)
 	{
-		if (s[i] == '-')
-			sig = sig * -1;
-		if (s[i] >= '0' && s[i] <= '9')
+		if (s1[i] != s2[i])
 		{
-			res = res * 10;
-			res -= (s[i] - '0');
-			brk = 1;
+			return (s1[i] - s2[i]);
 		}
-		else if (brk == 1)
-			break;
 	}
-	res = sig * res;
-	return (res);
+	return (0);
 }
