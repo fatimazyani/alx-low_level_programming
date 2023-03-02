@@ -1,31 +1,22 @@
 #include "main.h"
-
 /**
- * _atoi - convert a string to an integer.
- * @s: char type string
- * Return: integer converted
- */
+ * *_strncpy - find the length of a string
+ * @dest: pointer to the string
+ * @src: pointer
+ * @n: int
+ * Return: destination
+*/
 
-int _atoi(char *s)
+
+char *_strncpy(char *dest, char *src, int n)
 {
 	int i;
-	int res = 0;
-	int sig = -1;
-	int brk = 0;
 
-	for (i = 0; s[i] != '\0'; i++)
-	{
-		if (s[i] == '-')
-			sig = sig * -1;
-		if (s[i] >= '0' && s[i] <= '9')
-		{
-			res = res * 10;
-			res -= (s[i] - '0');
-			brk = 1;
-		}
-		else if (brk == 1)
-			break;
-	}
-	res = sig * res;
-	return (res);
+	for (i = 0; i < n && src[i] != '\0'; i++)
+		dest[i] = src[i];
+
+	for ( ; i < n; i++)
+		dest[i] = '\0';
+
+	return (dest);
 }
