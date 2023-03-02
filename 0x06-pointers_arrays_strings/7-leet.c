@@ -1,31 +1,28 @@
 #include "main.h"
 
 /**
- * _atoi - convert a string to an integer.
- * @s: char type string
- * Return: integer converted
+ * leet - transform to leet
+ * @s: char array string type
+ * Return: s transformed
  */
 
-int _atoi(char *s)
+char *leet(char *s)
 {
-	int i;
-	int res = 0;
-	int sig = -1;
-	int brk = 0;
+	int i, ii;
+	char s1[] = "aeotl";
+	char S1[] = "AEOTL";
+	char s2[] = "43071";
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (s[i] == '-')
-			sig = sig * -1;
-		if (s[i] >= '0' && s[i] <= '9')
+		for (ii = 0; ii < 5; ii++)
 		{
-			res = res * 10;
-			res -= (s[i] - '0');
-			brk = 1;
+			if (s[i] == s1[ii] || s[i] == S1[ii])
+			{
+				s[i] = s2[ii];
+				break;
+			}
 		}
-		else if (brk == 1)
-			break;
 	}
-	res = sig * res;
-	return (res);
+	return (s);
 }
