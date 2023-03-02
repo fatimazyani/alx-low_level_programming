@@ -1,31 +1,19 @@
 #include "main.h"
-
 /**
- * _atoi - convert a string to an integer.
- * @s: char type string
- * Return: integer converted
- */
+ * reverse_array - reverse a int array
+ * @a: pointer
+ * @n: array length
+ * Return: void
+*/
 
-int _atoi(char *s)
+void reverse_array(int *a, int n)
 {
-	int i;
-	int res = 0;
-	int sig = -1;
-	int brk = 0;
+	int i = 0, half;
 
-	for (i = 0; s[i] != '\0'; i++)
+	for (half = n / 2; half > 0; half--, i++)
 	{
-		if (s[i] == '-')
-			sig = sig * -1;
-		if (s[i] >= '0' && s[i] <= '9')
-		{
-			res = res * 10;
-			res -= (s[i] - '0');
-			brk = 1;
-		}
-		else if (brk == 1)
-			break;
+		a[n - i - 1] += a[i];
+		a[i] = a[n - i - 1] - a[i];
+		a[n - i - 1] = a[n - i - 1] - a[i];
 	}
-	res = sig * res;
-	return (res);
 }
