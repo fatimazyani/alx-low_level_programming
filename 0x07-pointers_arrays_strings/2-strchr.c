@@ -1,22 +1,25 @@
 #include "main.h"
+
 /**
- * *_strcat - concatenates two strings
- * @dest: pointer destination
- * @src: pointer source
- * Return: void
+ * _strchr - prints found c
+ * @s: pointer to char
+ * @c: char params to found
+ * Return: *S
 */
 
-char *_strcat(char *dest, char *src)
+char *_strchr(char *s, char c)
 {
-int a = -1, i;
-for (i = 0; dest[i] != '\0'; i++)
-;
-
-do {
-	a++;
-	dest[i] = src[a];
-	i++;
-} while (src[a] != '\0');
-
-return (dest);
+	while (*s != '\0')
+	{
+		if (*s == c)
+		{
+			return (s);
+		}
+		s++;
+	}
+	if (*s == c)
+	{
+		return (s);
+	}
+return (0);
 }
