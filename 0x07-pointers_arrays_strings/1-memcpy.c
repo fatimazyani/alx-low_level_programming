@@ -1,22 +1,20 @@
 #include "main.h"
+
 /**
- * *_strcat - concatenates two strings
- * @dest: pointer destination
- * @src: pointer source
- * Return: void
-*/
+ * _memcpy - irontnoux2
+ * @dest: pointer to char params
+ * @src: pointer to char params
+ * @n: size
+ * Return: *dest
+ */
 
-char *_strcat(char *dest, char *src)
+char *_memcpy(char *dest, char *src, unsigned int n)
 {
-int a = -1, i;
-for (i = 0; dest[i] != '\0'; i++)
-;
+	unsigned int i;
 
-do {
-	a++;
-	dest[i] = src[a];
-	i++;
-} while (src[a] != '\0');
-
-return (dest);
+	for (i = 0; i < n; i++)
+	{
+		dest[i] = src[i];
+	}
+	return (dest);
 }
