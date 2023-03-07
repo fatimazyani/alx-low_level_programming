@@ -1,22 +1,28 @@
 #include "main.h"
+
 /**
- * *_strcat - concatenates two strings
- * @dest: pointer destination
- * @src: pointer source
- * Return: void
+* _strspn - Gets the length of a prefix substring.
+* @s: String where substring will look.
+* @accept: Substring of accepted chars.
+* Return: Length of occurrence.
 */
 
-char *_strcat(char *dest, char *src)
+unsigned int _strspn(char *s, char *accept)
 {
-int a = -1, i;
-for (i = 0; dest[i] != '\0'; i++)
-;
+	unsigned int c = 0;
+	char *t = accept;
 
-do {
-	a++;
-	dest[i] = src[a];
-	i++;
-} while (src[a] != '\0');
-
-return (dest);
+	while (*s++)
+	{
+		while (*accept++)
+			if (*(s - 1) == *(accept - 1))
+			{
+				c++;
+				break;
+			}
+		if (!(*--accept))
+			break;
+		accept = t;
+	}
+	return (c);
 }
