@@ -1,22 +1,20 @@
 #include "main.h"
+
 /**
- * *_strcat - concatenates two strings
- * @dest: pointer destination
- * @src: pointer source
- * Return: void
+ * print_chessboard - prints chessboard.
+ * @a: matrix
 */
 
-char *_strcat(char *dest, char *src)
+void print_chessboard(char (*a)[8])
 {
-int a = -1, i;
-for (i = 0; dest[i] != '\0'; i++)
-;
+	int i, j;
 
-do {
-	a++;
-	dest[i] = src[a];
-	i++;
-} while (src[a] != '\0');
-
-return (dest);
+	for (i = 0; i < 8; i++)
+	{
+		for (j = 0; j < 8; j++)
+		{
+			_putchar(*(*(i + a) + j));
+		}
+	_putchar('\n');
+	}
 }
