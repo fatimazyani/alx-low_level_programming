@@ -1,22 +1,20 @@
 #include "main.h"
+#include <stdio.h>
+
 /**
- * *_strcat - concatenates two strings
- * @dest: pointer destination
- * @src: pointer source
- * Return: void
-*/
-
-char *_strcat(char *dest, char *src)
+ * print_diagsums -  prints sums
+ * @a: a pointer
+ * @size: size
+ */
+void print_diagsums(int *a, int size)
 {
-int a = -1, i;
-for (i = 0; dest[i] != '\0'; i++)
-;
+	int i, sum1 = 0, sum2 = 0;
 
-do {
-	a++;
-	dest[i] = src[a];
-	i++;
-} while (src[a] != '\0');
-
-return (dest);
+	for (i = 0; i < size; i++)
+	{
+		sum1 += *(a + (size * i + i));
+		sum2 += *(a + (size * i + size - 1 - i));
+	}
+	printf("%d, ", sum1);
+	printf("%d\n", sum2);
 }
