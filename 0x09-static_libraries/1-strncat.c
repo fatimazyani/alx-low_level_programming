@@ -1,23 +1,33 @@
 #include "main.h"
 
 /**
- * factorial - finds factorial
- * @n: int
- * Return: int
+ * _strncat - two words
+ * @dest : pointer to char param
+ * @src : pointer to char param
+ * @n : int parameter
+ * Return: *dest
  */
 
-int factorial(int n)
+char *_strncat(char *dest, char *src, int n)
 {
+	int m;
+	int i;
 
-	if (n < 0)
+	m = 0;
+
+	for (i = 0; i < 1000; i++)
 	{
-		return (-1);
+		if (dest[i] == '\0')
+		{
+			break;
+		}
+		m++;
 	}
-	else if (n == 0)
+
+	for (i = 0; src[i] != '\0' && i < n; i++)
 	{
-		return (1);
+		dest[m + i] = src[i];
 	}
-
-	return (n * factorial(n - 1));
-
+	dest[m + i] = '\0';
+	return (dest);
 }
