@@ -1,23 +1,23 @@
 #include "main.h"
 
 /**
- * _puts_recursion - prints a string, followed by a new line
- * @s: pointer to the string
- * Return: void
+ * factorial - finds factorial
+ * @n: int
+ * Return: int
  */
 
-
-void _puts_recursion(char *s)
+int factorial(int n)
 {
 
-	if (*s == '\0')
+	if (n < 0)
 	{
-		_putchar('\n');
+		return (-1);
 	}
-	else
+	else if (n == 0)
 	{
-		_putchar(*s);
-		_puts_recursion(s + 1);
+		return (1);
 	}
+
+	return (n * factorial(n - 1));
 
 }
