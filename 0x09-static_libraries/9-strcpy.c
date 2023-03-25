@@ -1,23 +1,20 @@
 #include "main.h"
 
 /**
- * factorial - finds factorial
- * @n: int
- * Return: int
+ * *_strcpy - copy strg to another string
+ * @dest: pointer
+ * @src: poiter
+ * Return: numbers dest
  */
 
-int factorial(int n)
+char *_strcpy(char *dest, char *src)
 {
+	int i;
 
-	if (n < 0)
+	for (i = 0; src[i] != '\0'; i++)
 	{
-		return (-1);
+		dest[i] = src[i];
 	}
-	else if (n == 0)
-	{
-		return (1);
-	}
-
-	return (n * factorial(n - 1));
-
+	dest[i] = '\0';
+	return (dest);
 }
