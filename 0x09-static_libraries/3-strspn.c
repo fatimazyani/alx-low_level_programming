@@ -1,23 +1,27 @@
 #include "main.h"
 
 /**
- * factorial - finds factorial
- * @n: int
- * Return: int
- */
-
-int factorial(int n)
+* _strspn - Gets the length of a prefix substring.
+* @s: String where substring will look.
+* @accept: Substring of accepted chars.
+* Return: Length of occurrence.
+*/
+unsigned int _strspn(char *s, char *accept)
 {
+	unsigned int c = 0;
+	char *t = accept;
 
-	if (n < 0)
+	while (*s++)
 	{
-		return (-1);
+		while (*accept++)
+			if (*(s - 1) == *(accept - 1))
+			{
+				c++;
+				break;
+			}
+		if (!(*--accept))
+			break;
+		accept = t;
 	}
-	else if (n == 0)
-	{
-		return (1);
-	}
-
-	return (n * factorial(n - 1));
-
+	return (c);
 }
