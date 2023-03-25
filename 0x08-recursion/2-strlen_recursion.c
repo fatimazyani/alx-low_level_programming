@@ -1,20 +1,19 @@
 #include "main.h"
 
 /**
- * _memset - ironnou
- * @s: pointer to char params
- * @b: data to change
- * @n: index
- * Return: *s
+ * _strlen_recursion - returns the length of a string
+ * @s: pointer the string
+ * Return: int
  */
 
-char *_memset(char *s, char b, unsigned int n)
+int _strlen_recursion(char *s)
 {
-	unsigned int i;
+	int n = 0;
 
-	for (i = 0; i < n; i++)
+	if (*s > '\0')
 	{
-		s[i] = b;
+		n += _strlen_recursion(s + 1) + 1;
 	}
-	return (s);
+
+	return (n);
 }
