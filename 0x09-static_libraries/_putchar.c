@@ -1,23 +1,10 @@
 #include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
 
-/**
- * factorial - finds factorial
- * @n: int
- * Return: int
- */
-
-int factorial(int n)
+int _putchar(char c)
 {
-
-	if (n < 0)
-	{
-		return (-1);
-	}
-	else if (n == 0)
-	{
-		return (1);
-	}
-
-	return (n * factorial(n - 1));
-
+    return putchar(c);
 }
