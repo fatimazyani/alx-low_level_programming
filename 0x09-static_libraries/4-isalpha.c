@@ -1,23 +1,23 @@
 #include "main.h"
 
 /**
- * factorial - finds factorial
- * @n: int
- * Return: int
+ * _isalpha - check the code for Holberton School students.
+ *
+ * @c: is c an integer argument
+ *
+ * Return: Always 0.
  */
 
-int factorial(int n)
+int _isalpha(int c)
 {
 
-	if (n < 0)
-	{
-		return (-1);
-	}
-	else if (n == 0)
+	if (c >= 97 && c <= 122)
 	{
 		return (1);
 	}
-
-	return (n * factorial(n - 1));
-
+	else if (c >= 65 && c <= 90)
+	{
+		return (1);
+	}
+	return (0);
 }
