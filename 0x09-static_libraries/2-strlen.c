@@ -1,23 +1,19 @@
 #include "main.h"
 
 /**
- * factorial - finds factorial
- * @n: int
- * Return: int
+ * _strlen - length of a string
+ * @s: input char
+ * Return: length of a string
  */
 
-int factorial(int n)
+int _strlen(char *s)
 {
+	int l = 0;
 
-	if (n < 0)
+	while (*s != '\0')
 	{
-		return (-1);
+		s++;
+		l++;
 	}
-	else if (n == 0)
-	{
-		return (1);
-	}
-
-	return (n * factorial(n - 1));
-
+	return (l);
 }
