@@ -1,23 +1,13 @@
-#include "main.h"
+#include <unistd.h>
 
 /**
- * factorial - finds factorial
- * @n: int
- * Return: int
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
-
-int factorial(int n)
+int _putchar(char c)
 {
-
-	if (n < 0)
-	{
-		return (-1);
-	}
-	else if (n == 0)
-	{
-		return (1);
-	}
-
-	return (n * factorial(n - 1));
-
+	return (write(1, &c, 1));
 }
