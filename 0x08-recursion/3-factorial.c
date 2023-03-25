@@ -4,7 +4,6 @@
  * @n: int
  * Return: int
  */
-
 int factorial(int n)
 {
 
