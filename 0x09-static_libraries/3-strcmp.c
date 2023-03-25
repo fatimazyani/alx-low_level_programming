@@ -1,23 +1,23 @@
 #include "main.h"
 
 /**
- * factorial - finds factorial
- * @n: int
- * Return: int
+ * _strcmp - compare
+ * @s1 : pointerto char params
+ * @s2 : pointer to char params
+ * Return: *dest
  */
 
-int factorial(int n)
+int _strcmp(char *s1, char *s2)
 {
+	int i;
+	int R;
 
-	if (n < 0)
+	i = 0;
+
+	while (s1[i] == s2[i] && (s1[i] != '\0' || s2[i] != '\0'))
 	{
-		return (-1);
+		i++;
 	}
-	else if (n == 0)
-	{
-		return (1);
-	}
-
-	return (n * factorial(n - 1));
-
+	R = s1[i] - s2[i];
+	return (R);
 }
