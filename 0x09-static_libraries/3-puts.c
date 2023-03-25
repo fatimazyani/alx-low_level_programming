@@ -1,23 +1,17 @@
 #include "main.h"
 
 /**
- * factorial - finds factorial
- * @n: int
- * Return: int
+ * _puts - prints string
+ * @str: input string
+ * Return: no return
  */
 
-int factorial(int n)
+void _puts(char *str)
 {
-
-	if (n < 0)
+	while (*str != '\0')
 	{
-		return (-1);
+		_putchar(*str);
+		str++;
 	}
-	else if (n == 0)
-	{
-		return (1);
-	}
-
-	return (n * factorial(n - 1));
-
+	_putchar('\n');
 }
