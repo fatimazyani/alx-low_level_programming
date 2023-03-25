@@ -1,23 +1,18 @@
 #include "main.h"
 
 /**
- * factorial - finds factorial
- * @n: int
- * Return: int
+ * _abs - check the code for Holberton School students.
+ *
+ * @n: is an integer argument
+ *
+ * Return: Always 0.
  */
 
-int factorial(int n)
+int _abs(int n)
 {
-
-	if (n < 0)
+	if (n >= 0)
 	{
-		return (-1);
+		return (n);
 	}
-	else if (n == 0)
-	{
-		return (1);
-	}
-
-	return (n * factorial(n - 1));
-
+	return (-n);
 }
