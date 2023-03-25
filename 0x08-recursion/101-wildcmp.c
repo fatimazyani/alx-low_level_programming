@@ -1,23 +1,30 @@
 #include "main.h"
 
 /**
- * factorial - finds factorial
- * @n: int
- * Return: int
+ * wildcmp - Compare strings
+ * @s1: pointer to string params
+ * @s2: pointer to string params
+ * Return: 0
  */
 
-int factorial(int n)
+int wildcmp(char *s1, char *s2)
 {
-
-	if (n < 0)
+	if (*s1 == '\0')
 	{
-		return (-1);
+		if (*s2 != '\0' && *s2 == '*')
+		{
+			return (wildcmp(s1, s2 + 1));
+		}
+		return (*s2 == '\0');
 	}
-	else if (n == 0)
+
+	if (*s2 == '*')
 	{
-		return (1);
+		return (wildcmp(s1 + 1, s2) || wildcmp(s1, s2 + 1));
 	}
-
-	return (n * factorial(n - 1));
-
+	else if (*s1 == *s2)
+	{
+		return (wildcmp(s1 + 1, s2 + 1));
+	}
+	return (0);
 }
