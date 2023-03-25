@@ -1,23 +1,23 @@
 #include "main.h"
 
 /**
- * factorial - finds factorial
- * @n: int
- * Return: int
- */
+ * _strchr - prints found c
+ * @s: pointer to char
+ * @c: char params to found
+ * Return: *S
+*/
 
-int factorial(int n)
+char *_strchr(char *s, char c)
 {
+	int i;
 
-	if (n < 0)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		return (-1);
-	}
-	else if (n == 0)
-	{
-		return (1);
-	}
 
-	return (n * factorial(n - 1));
-
+		if (s[i] == c)
+		{
+			return (s + i);
+		}
+	}
+	return (0);
 }
