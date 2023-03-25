@@ -1,23 +1,18 @@
 #include "main.h"
 
 /**
- * factorial - finds factorial
- * @n: int
- * Return: int
+ * _islower - check the code for Holberton School students.
+ *
+ * @c:  is a parameter
+ *
+ * Return: Always 0.
  */
 
-int factorial(int n)
+int _islower(int c)
 {
-
-	if (n < 0)
-	{
-		return (-1);
-	}
-	else if (n == 0)
+	if (c >= 97 && c <= 122)
 	{
 		return (1);
 	}
-
-	return (n * factorial(n - 1));
-
+	return (0);
 }
