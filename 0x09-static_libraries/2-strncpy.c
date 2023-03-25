@@ -1,23 +1,25 @@
 #include "main.h"
 
 /**
- * factorial - finds factorial
- * @n: int
- * Return: int
+ * _strncpy - two words
+ * @dest : pointer to char params
+ * @src : pointer to char params
+ * @n : int params
+ * Return: *dest
  */
 
-int factorial(int n)
+char *_strncpy(char *dest, char *src, int n)
 {
+	int i;
 
-	if (n < 0)
+	for (i = 0; src[i] != '\0' && i < n; i++)
 	{
-		return (-1);
-	}
-	else if (n == 0)
-	{
-		return (1);
+		dest[i] = src[i];
 	}
 
-	return (n * factorial(n - 1));
-
+	for ( ; i < n; i++)
+	{
+		dest[i] = '\0';
+	}
+	return (dest);
 }
