@@ -1,23 +1,32 @@
 #include "main.h"
 
 /**
- * factorial - finds factorial
- * @n: int
- * Return: int
+ * *_strcat - function commute srtings
+ * @dest: param pointer to a char
+ * @src: param pointer to a char
+ * Return: return value of dest
  */
 
-int factorial(int n)
+char *_strcat(char *dest, char *src)
 {
+	int i;
+	int j;
 
-	if (n < 0)
+	i = 0;
+	j = 0;
+
+	while (dest[i] != '\0')
 	{
-		return (-1);
+		i++;
 	}
-	else if (n == 0)
+
+	while (src[j] != '\0')
 	{
-		return (1);
+		dest[i] = src[j];
+		j++;
+		i++;
 	}
 
-	return (n * factorial(n - 1));
-
+	dest[i] = '\0';
+	return (dest);
 }
