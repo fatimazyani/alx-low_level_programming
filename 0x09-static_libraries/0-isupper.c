@@ -1,23 +1,16 @@
 #include "main.h"
 
 /**
- * factorial - finds factorial
- * @n: int
- * Return: int
+ * _isupper - check the code for Holberton School students.
+ *
+ * @c: is an integer param
+ *
+ * Return: Always 0.
  */
 
-int factorial(int n)
+
+int _isupper(int c)
 {
 
-	if (n < 0)
-	{
-		return (-1);
-	}
-	else if (n == 0)
-	{
-		return (1);
-	}
-
-	return (n * factorial(n - 1));
-
+	return (c >= 65 && c <= 90);
 }
