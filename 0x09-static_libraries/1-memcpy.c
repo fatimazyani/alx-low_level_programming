@@ -1,23 +1,20 @@
 #include "main.h"
 
 /**
- * factorial - finds factorial
- * @n: int
- * Return: int
+ * _memcpy - irontnoux2
+ * @dest: pointer to char params
+ * @src: pointer to char params
+ * @n: size
+ * Return: *dest
  */
 
-int factorial(int n)
+char *_memcpy(char *dest, char *src, unsigned int n)
 {
+	unsigned int i;
 
-	if (n < 0)
+	for (i = 0; i < n; i++)
 	{
-		return (-1);
+		dest[i] = src[i];
 	}
-	else if (n == 0)
-	{
-		return (1);
-	}
-
-	return (n * factorial(n - 1));
-
+	return (dest);
 }
