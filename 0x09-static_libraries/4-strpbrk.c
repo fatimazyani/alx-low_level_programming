@@ -1,23 +1,27 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * factorial - finds factorial
- * @n: int
- * Return: int
+ * _strpbrk - bytes
+ * @s: pointer to char
+ * @accept: pointer to char
+ * Return: NULL
  */
 
-int factorial(int n)
+char *_strpbrk(char *s, char *accept)
 {
+	int i;
 
-	if (n < 0)
+	while (*s)
 	{
-		return (-1);
+		for (i = 0; accept[i]; i++)
+		{
+			if (*s == accept[i])
+			{
+				return (s);
+			}
+		}
+		s++;
 	}
-	else if (n == 0)
-	{
-		return (1);
-	}
-
-	return (n * factorial(n - 1));
-
+	return (NULL);
 }
