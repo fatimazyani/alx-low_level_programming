@@ -1,20 +1,17 @@
 #include "main.h"
 
 /**
- * _memset - ironnou
- * @s: pointer to char params
- * @b: data to change
- * @n: index
- * Return: *s
+ * _print_rev_recursion - prints string in reverse
+ * @s: pointer to the string
+ * Return: void
  */
 
-char *_memset(char *s, char b, unsigned int n)
+void _print_rev_recursion(char *s)
 {
-	unsigned int i;
-
-	for (i = 0; i < n; i++)
+	if (*s > '\0')
 	{
-		s[i] = b;
+		_print_rev_recursion(s + 1);
+		_putchar(*s);
 	}
-	return (s);
+
 }
