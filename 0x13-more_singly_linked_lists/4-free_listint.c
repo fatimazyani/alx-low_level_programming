@@ -1,23 +1,17 @@
 #include "lists.h"
-
 /**
- * print_list - prints all the elements of a list_t list.
- * @h: pointer to the list.
- * Return: number of nodes.
- **/
-size_t print_list(const list_t *h)
+ * free_listint - is a function that frees a list_t list.
+ * @head: linked list to free.
+ */
+void free_listint(listint_t *head)
 {
-	size_t cont = 0;
+	listint_t *p;
 
-	while (h)
+	p = head;
+	while (p != NULL)
 	{
-		if (h->str)
-			printf("[%u] %s\n", h->len, h->str);
-		else
-			printf("[0] (nil)\n");
-		cont++;
-		h = h->next;
+		head = head->next;
+		free(p);
+		p = head;
 	}
-
-	return (cont);
 }
