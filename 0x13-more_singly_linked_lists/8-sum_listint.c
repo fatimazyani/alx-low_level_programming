@@ -1,23 +1,22 @@
 #include "lists.h"
-
 /**
- * print_list - prints all the elements of a list_t list.
- * @h: pointer to the list.
- * Return: number of nodes.
- **/
-size_t print_list(const list_t *h)
+ * sum_listint - Write a function that returns the sum of all
+ * the data (n) of a listint_t linked list.
+ * @head: linked list's begining.
+ * Return: the adding of the list values.
+ */
+int sum_listint(listint_t *head)
 {
-	size_t cont = 0;
+	size_t i = 0;
+	listint_t *p;
 
-	while (h)
+	p = head;
+	if (head == NULL)
+		return (0);
+	while (p != NULL)
 	{
-		if (h->str)
-			printf("[%u] %s\n", h->len, h->str);
-		else
-			printf("[0] (nil)\n");
-		cont++;
-		h = h->next;
+		i += p->n;
+		p = p->next;
 	}
-
-	return (cont);
+	return (i);
 }
