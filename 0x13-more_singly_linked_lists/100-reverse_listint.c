@@ -1,23 +1,23 @@
 #include "lists.h"
-
 /**
- * print_list - prints all the elements of a list_t list.
- * @h: pointer to the list.
- * Return: number of nodes.
- **/
-size_t print_list(const list_t *h)
+ * reverse_listint - Reverse a list.
+ * @head: list's begining.
+ * Return: the addres of the head.
+ */
+listint_t *reverse_listint(listint_t **head)
 {
-	size_t cont = 0;
+	listint_t *p0 = NULL, *p1 = *head;
 
-	while (h)
+
+	if (head == NULL || *head == NULL)
+		return (*head);
+	while (p1 != NULL)
 	{
-		if (h->str)
-			printf("[%u] %s\n", h->len, h->str);
-		else
-			printf("[0] (nil)\n");
-		cont++;
-		h = h->next;
+		p1 = (**head).next;
+		(**head).next = p0;
+		p0 = *head;
+		*head = p1;
 	}
-
-	return (cont);
+	*head = p0;
+	return (*head);
 }
