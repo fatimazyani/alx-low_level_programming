@@ -1,23 +1,14 @@
-#include "lists.h"
-
+#include "main.h"
 /**
- * print_list - prints all the elements of a list_t list.
- * @h: pointer to the list.
- * Return: number of nodes.
- **/
-size_t print_list(const list_t *h)
+ * get_endianness -  function that checks the endianness.
+ * Return: 0 if big endian, 1 if little endian
+ */
+int get_endianness(void)
 {
-	size_t cont = 0;
+	int a = 1;
 
-	while (h)
-	{
-		if (h->str)
-			printf("[%u] %s\n", h->len, h->str);
-		else
-			printf("[0] (nil)\n");
-		cont++;
-		h = h->next;
-	}
-
-	return (cont);
+	a = a >> 1;
+	if (a != 0)
+		return (0);
+	return (1);
 }
