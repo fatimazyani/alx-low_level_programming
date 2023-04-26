@@ -1,23 +1,23 @@
 #include "lists.h"
-
 /**
- * print_list - prints all the elements of a list_t list.
- * @h: pointer to the list.
- * Return: number of nodes.
- **/
-size_t print_list(const list_t *h)
+ * get_nodeint_at_index - Write a function that returns the nth
+ * node of a listint_t linked list.
+ * @index: node to look for.
+ * @head: list's begining.
+ * Return: the length of the list.
+ */
+listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-	size_t cont = 0;
+	unsigned int i;
+	listint_t *p;
 
-	while (h)
-	{
-		if (h->str)
-			printf("[%u] %s\n", h->len, h->str);
-		else
-			printf("[0] (nil)\n");
-		cont++;
-		h = h->next;
-	}
-
-	return (cont);
+	p = head;
+	for (i = 0; p != NULL; i++)
+		p = p->next;
+	if (index > i)
+		return (NULL);
+	p = head;
+	for (i = 0; i != index; i++)
+		p = p->next;
+	return (p);
 }

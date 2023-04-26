@@ -1,23 +1,19 @@
 #include "lists.h"
-
 /**
- * print_list - prints all the elements of a list_t list.
- * @h: pointer to the list.
- * Return: number of nodes.
- **/
-size_t print_list(const list_t *h)
+ * add_nodeint - function that adds a new node at the beginning of a list.
+ * @head: where to add the node.
+ * @n: int to add.
+ * Return: the adress of new head node.
+ */
+listint_t *add_nodeint(listint_t **head, const int n)
 {
-	size_t cont = 0;
+	listint_t *new;
 
-	while (h)
-	{
-		if (h->str)
-			printf("[%u] %s\n", h->len, h->str);
-		else
-			printf("[0] (nil)\n");
-		cont++;
-		h = h->next;
-	}
-
-	return (cont);
+	new = malloc(sizeof(listint_t));
+	if (new == NULL)
+		return (NULL);
+	new->n = n;
+	new->next = *head;
+	*head = new;
+	return (*head);
 }
