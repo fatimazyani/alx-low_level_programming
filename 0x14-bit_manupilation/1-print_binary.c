@@ -1,23 +1,26 @@
-#include "lists.h"
-
+#include "main.h"
 /**
- * print_list - prints all the elements of a list_t list.
- * @h: pointer to the list.
- * Return: number of nodes.
- **/
-size_t print_list(const list_t *h)
+ * print_binary - Function that prints the binary representation of a number.
+ * @n: Number to convert.
+ */
+void print_binary(unsigned long int n)
 {
-	size_t cont = 0;
+	unsigned long int i, a = 1, flag = 0, p, b;
 
-	while (h)
+	if (n == 0)
 	{
-		if (h->str)
-			printf("[%u] %s\n", h->len, h->str);
-		else
-			printf("[0] (nil)\n");
-		cont++;
-		h = h->next;
+		_putchar(48);
+		return;
 	}
-
-	return (cont);
+	for (i = 0; i < 64; i++)
+	{
+		p = ((a << (63 - i)) & n);
+		if (p >> (63 - i))
+			flag = 1;
+		if (flag != 0)
+		{
+			b = p >> (63 - i);
+			_putchar(b + 48);
+		}
+	}
 }
