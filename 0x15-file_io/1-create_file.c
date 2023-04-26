@@ -1,16 +1,26 @@
 #include "main.h"
 /**
- * set_bit - function that sets the value of a bit to 1 at a given index.
- * @n: Number to convert.
- * @index:  is the index, starting from 0 of the bit you want to get.
- * Return: the value of the bit at index index or -1 if an error occured.
+ * create_file - function that appends text at the end of a file.
+ * @filename: File to created.
+ * @text_content: is a NULL terminated string to write to the file.
+ * Return: 1 on success and -1 on failure.
  */
-int set_bit(unsigned long int *n, unsigned int index)
+int create_file(const char *filename, char *text_content)
 {
-	unsigned long int a = 1;
+	int i = 0, fd, m;
 
-	if (index > 64)
+	if (filename == NULL)
 		return (-1);
-	*n = a << index | *n;
+	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
+	if (fd == -1)
+		return (-1);
+	if (text_content == NULL)
+		text_content = "";
+	while (text_content[i] != '\0')
+		i++;
+	m = write(fd, text_content, i);
+	close(fd);
+	if (m == -1)
+		return (-1);
 	return (1);
 }
