@@ -1,23 +1,37 @@
-#include "lists.h"
-
+#include "main.h"
 /**
- * print_list - prints all the elements of a list_t list.
- * @h: pointer to the list.
- * Return: number of nodes.
- **/
-size_t print_list(const list_t *h)
+ * set_b - function that sets the value of a bit to 1 at a given index.
+ * @n: Number to convert.
+ * @index:  is the index, starting from 0 of the bit you want to get.
+ * Return: the value of the bit at index index or -1 if an error occured.
+ */
+int set_b(unsigned long int *n, unsigned int index)
 {
-	size_t cont = 0;
+	unsigned long int a = 1;
 
-	while (h)
+	if (index > 64)
+		return (-1);
+	*n = a << index | *n;
+	return (1);
+}
+/**
+ * clear_bit - function that sets the value of a bit to 0 at a given index.
+ * @n: Number to convert.
+ * @index:  is the index, starting from 0 of the bit you want to get.
+ * Return: the value of the bit at index index or -1 if an error occured.
+ */
+int clear_bit(unsigned long int *n, unsigned int index)
+{
+	unsigned long int a = ULONG_MAX - 1;
+	unsigned int i;
+
+	if (index > 64)
+		return (-1);
+	for (i = 0; i < index; i++)
 	{
-		if (h->str)
-			printf("[%u] %s\n", h->len, h->str);
-		else
-			printf("[0] (nil)\n");
-		cont++;
-		h = h->next;
+		a = a << 1;
+		set_b(&a, 0);
 	}
-
-	return (cont);
+	*n = a & *n;
+	return (1);
 }
