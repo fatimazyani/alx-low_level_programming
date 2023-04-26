@@ -1,23 +1,22 @@
-#include "lists.h"
-
+#include "main.h"
 /**
- * print_list - prints all the elements of a list_t list.
- * @h: pointer to the list.
- * Return: number of nodes.
- **/
-size_t print_list(const list_t *h)
+ * flip_bits - Function that returns the number of bits you would need
+ * to flip to get from one number to another.
+ * @n: Number to flip.
+ * @m: number to compare.
+ * Return: the value of the bits to change.
+ */
+unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	size_t cont = 0;
+	unsigned long int i, count = 0, a = 1, aux0, aux1;
 
-	while (h)
+	for (i = 0; i < 64; i++)
 	{
-		if (h->str)
-			printf("[%u] %s\n", h->len, h->str);
-		else
-			printf("[0] (nil)\n");
-		cont++;
-		h = h->next;
+		aux0 = a & n;
+		aux1 = a & m;
+		a = a << 1;
+		if (aux0 != aux1)
+			count++;
 	}
-
-	return (cont);
+	return (count);
 }
