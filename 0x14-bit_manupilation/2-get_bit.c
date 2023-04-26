@@ -1,23 +1,15 @@
-#include "lists.h"
-
+#include "main.h"
 /**
- * print_list - prints all the elements of a list_t list.
- * @h: pointer to the list.
- * Return: number of nodes.
- **/
-size_t print_list(const list_t *h)
+ * get_bit - Function that returns the value of a bit at a given index.
+ * @n: Number to convert.
+ * @index:  is the index, starting from 0 of the bit you want to get.
+ * Return: the value of the bit at index index or -1 if an error occured.
+ */
+int get_bit(unsigned long int n, unsigned int index)
 {
-	size_t cont = 0;
-
-	while (h)
-	{
-		if (h->str)
-			printf("[%u] %s\n", h->len, h->str);
-		else
-			printf("[0] (nil)\n");
-		cont++;
-		h = h->next;
-	}
-
-	return (cont);
+	if (index > 64)
+		return (-1);
+	n = n >> index;
+	n = n & 1;
+	return (n);
 }
