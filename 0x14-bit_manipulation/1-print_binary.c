@@ -1,18 +1,26 @@
-#include "lists.h"
+#include "main.h"
 /**
- * print_listint - is a function that prints all the elements of a list_t list.
- * @h: linked list to print.
- * Return: the length of the list.
+ * print_binary - will prints the binary representation of a number.
+ * @n: a Number to convert.
  */
-size_t print_listint(const listint_t *h)
+void print_binary(unsigned long int n)
 {
-	size_t i = 0;
+	unsigned long int i, c = 1, flag = 0, p, b;
 
-	while (h != NULL)
+	if (n == 0)
 	{
-		printf("%i\n", h->n);
-		h = h->next;
-		i++;
+		_putchar(48);
+		return;
 	}
-	return (i);
+	for (i = 0; i < 64; i++)
+	{
+		p = ((c << (63 - i)) & n);
+		if (p >> (63 - i))
+			flag = 1;
+		if (flag != 0)
+		{
+			b = p >> (63 - i);
+			_putchar(b + 48);
+		}
+	}
 }
