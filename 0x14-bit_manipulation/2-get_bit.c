@@ -1,18 +1,15 @@
-#include "lists.h"
+#include "main.h"
 /**
- * print_listint - is a function that prints all the elements of a list_t list.
- * @h: linked list to print.
- * Return: the length of the list.
+ * get_bit - will returns at a given index the value of a bit .
+ * @n:   the Number to convert.
+ * @index:  the index, starting from 0 of the bit you want to get.
+ * Return: will return -1 if an error occured or the value of the bit at the index .
  */
-size_t print_listint(const listint_t *h)
+int get_bit(unsigned long int n, unsigned int index)
 {
-	size_t i = 0;
-
-	while (h != NULL)
-	{
-		printf("%i\n", h->n);
-		h = h->next;
-		i++;
-	}
-	return (i);
+	if (index > 64)
+		return (-1);
+	n = n >> index;
+	n = n & 1;
+	return (n);
 }
