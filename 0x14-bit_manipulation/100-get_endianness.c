@@ -1,18 +1,14 @@
-#include "lists.h"
+#include "main.h"
 /**
- * print_listint - is a function that prints all the elements of a list_t list.
- * @h: linked list to print.
- * Return: the length of the list.
+ * get_endianness -  will checks the endianness.
+ * Return:  if big endian returns 0,  if little endian returns 1
  */
-size_t print_listint(const listint_t *h)
+int get_endianness(void)
 {
-	size_t i = 0;
+	int C = 1;
 
-	while (h != NULL)
-	{
-		printf("%i\n", h->n);
-		h = h->next;
-		i++;
-	}
-	return (i);
+	C = C >> 1;
+	if (C != 0)
+		return (0);
+	return (1);
 }
