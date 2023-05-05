@@ -1,18 +1,22 @@
-#include "lists.h"
+#include "main.h"
 /**
- * print_listint - is a function that prints all the elements of a list_t list.
- * @h: linked list to print.
- * Return: the length of the list.
+ * flip_bits - a function that returns the number of bits you would need 
+ * to flip to get from one number to another.
+ * @n: the Number to flip.
+ * @m: the number to compare.
+ * Return: will return the value of the bits to change.
  */
-size_t print_listint(const listint_t *h)
+unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	size_t i = 0;
+	unsigned long int i, count = 0, a = 1, aux0, aux1;
 
-	while (h != NULL)
+	for (i = 0; i < 64; i++)
 	{
-		printf("%i\n", h->n);
-		h = h->next;
-		i++;
+		aux0 = a & n;
+		aux1 = a & m;
+		a = a << 1;
+		if (aux0 != aux1)
+			count++;
 	}
-	return (i);
+	return (count);
 }
