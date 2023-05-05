@@ -1,18 +1,15 @@
-#include "lists.h"
-/**
- * print_listint - is a function that prints all the elements of a list_t list.
- * @h: linked list to print.
- * Return: the length of the list.
- */
-size_t print_listint(const listint_t *h)
-{
-	size_t i = 0;
-
-	while (h != NULL)
-	{
-		printf("%i\n", h->n);
-		h = h->next;
-		i++;
-	}
-	return (i);
-}
+#ifndef MAIN
+#define MAIN
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <limits.h>
+int _putchar(char c);
+unsigned int binary_to_uint(const char *b);
+void print_binary(unsigned long int n);
+int get_bit(unsigned long int n, unsigned int index);
+int set_bit(unsigned long int *n, unsigned int index);
+int clear_bit(unsigned long int *n, unsigned int index);
+unsigned int flip_bits(unsigned long int n, unsigned long int m);
+int get_endianness(void);
+#endif
