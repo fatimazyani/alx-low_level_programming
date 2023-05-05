@@ -1,18 +1,11 @@
-#include "lists.h"
-/**
- * print_listint - is a function that prints all the elements of a list_t list.
- * @h: linked list to print.
- * Return: the length of the list.
- */
-size_t print_listint(const listint_t *h)
-{
-	size_t i = 0;
+#include <unistd.h>
 
-	while (h != NULL)
-	{
-		printf("%i\n", h->n);
-		h = h->next;
-		i++;
-	}
-	return (i);
-}
+/**
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ * Return: 1 if succeded if not returns -1 .
+ *  and errno is set appropriately.
+ */
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
